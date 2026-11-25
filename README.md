@@ -59,4 +59,4 @@ A web-based application designed to help users track their daily habits and unde
 &#x20;  ```cmd
 
 &#x20;  mvnw.cmd spring-boot:run
-
+http://localhost:8080/.
