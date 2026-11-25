@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Carbon Footprint Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script th:src="@{/js/script.js}" defer></script>
+</head>
+<body>
+<h2>🌿 Carbon Footprint Tracker</h2>
+
+<div class="container">
+    <a href="/add" class="button">Add New Habit</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Activity</th>
+                <th>Duration</th>
+                <th>Carbon Emission (kg CO₂)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="habit : ${listHabits}">
+                <td th:text="${habit.id}"></td>
+                <td th:text="${habit.activity}"></td>
+                <td th:text="${habit.duration}"></td>
+                <td th:text="${habit.carbonEmission}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

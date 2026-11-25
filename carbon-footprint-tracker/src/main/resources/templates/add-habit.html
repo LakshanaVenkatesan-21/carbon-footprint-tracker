@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Habit</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script th:src="@{/js/script.js}" defer></script>
+</head>
+<body>
+<h2>Add Your Habit 🌱</h2>
+
+<div class="container">
+    <form th:action="@{/save}" th:object="${habit}" method="post">
+        <label>Activity</label>
+        <input type="text" th:field="*{activity}" placeholder="e.g., Driving, Walking" required />
+
+        <label>Duration (minutes/km)</label>
+        <input type="number" th:field="*{duration}" required />
+
+        <button type="submit">Save Habit</button>
+    </form>
+</div>
+</body>
+</html>
